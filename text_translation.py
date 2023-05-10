@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import time
 import pdfminer.high_level
 import re
 import openai
@@ -522,6 +523,8 @@ else:
             translated_text += f"{translated_short_text}\n"
         # print(short_text)
         print(translated_short_text)
+        # 增加时间延迟
+        time.sleep(5)  # 延迟时间可以根据需要进行调整，短时间内调用过高api可能导致翻译失败
 
     # 将翻译后的文本写入epub文件
     with tqdm(total=10, desc="Writing translated text to epub") as pbar:
